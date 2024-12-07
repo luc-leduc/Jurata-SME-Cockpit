@@ -396,6 +396,70 @@
           "addPosition": "Position hinzufügen",
           "actions": "Aktionen",
           "summary": "{{debit}} an {{credit}} | {{amount}}"
+        },
+        "notFound": {
+          "title": "Buchung nicht gefunden",
+          "description": "Die angeforderte Buchung konnte nicht gefunden werden."
+        },
+        "fallbackTitle": "Buchung",
+        "date": {
+          "title": "Datum",
+          "documentDate": "Belegdatum",
+          "dueDate": "Fälligkeitsdatum",
+          "servicePeriod": "Leistungsperiode"
+        },
+        "issuer": {
+          "title": "Aussteller",
+          "noIssuer": "Kein Aussteller erfasst"
+        },
+        "transaction": {
+          "title": "Buchung",
+          "debit": "Soll-Konto",
+          "credit": "Haben-Konto",
+          "amount": "Betrag"
+        },
+        "receipt": {
+          "title": "Beleg",
+          "number": "Beleg-Nr.",
+          "status": "Status",
+          "hasReceipt": "Beleg vorhanden",
+          "noReceipt": "Kein Beleg",
+          "noReceiptUpload": "Kein Beleg hochgeladen"
+        }
+      },
+      "transaction": {
+        "notFound": {
+          "title": "Buchung nicht gefunden",
+          "description": "Die angeforderte Buchung konnte nicht gefunden werden."
+        },
+        "fallbackTitle": "Buchung",
+        "sections": {
+          "issuer": {
+            "title": "Rechnungssteller",
+            "processing": "Jurata AI extrahiert Daten",
+            "notRecorded": "Nicht erfasst",
+            "noIssuer": "Keine Angaben zum Rechnungssteller"
+          },
+          "date": {
+            "title": "Datum",
+            "documentDate": "Belegdatum",
+            "dueDate": "Fälligkeitsdatum",
+            "servicePeriod": "Leistungsperiode"
+          },
+          "transaction": {
+            "title": "Buchung",
+            "debit": "Soll",
+            "credit": "Haben",
+            "amount": "Betrag"
+          },
+          "receipt": {
+            "title": "Beleg",
+            "number": "Beleg-Nr.",
+            "status": "Status",
+            "hasReceipt": "Beleg vorhanden",
+            "noReceipt": "Kein Beleg",
+            "noReceiptUpload": "Kein Beleg vorhanden"
+          }
         }
       }
     },
