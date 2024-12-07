@@ -792,7 +792,16 @@
       "cancel": "Abbrechen",
       "date": "Datum",
       "description": "Beschreibung",
-      "amount": "Betrag"
+      "amount": "Betrag",
+      "importProgress": "{{processed}} von {{total}} Buchungen importiert ({{percent}}%)",
+      "notification": {
+        "title": "Excel Import läuft...",
+        "cancel": "Abbrechen",
+        "now": "Jetzt",
+        "completed": "Excel Import abgeschlossen",
+        "completedMessage": "{{total}} Buchungen erfolgreich importiert",
+        "failed": "Excel Import fehlgeschlagen"
+      }
     },
     "accountSelect": {
       "selectAccount": "Konto wählen",
@@ -801,6 +810,34 @@
       "aiSuggestions": "AI-Vorschläge",
       "remainingAccounts": "Übrige Konten",
       "allAccounts": "Alle Konten"
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "markAllAsRead": "Alle als gelesen markieren",
+      "noNotifications": "Keine Benachrichtigungen",
+      "unreadCount": "{{count}} ungelesen",
+      "time": {
+        "now": "Jetzt",
+        "minutes_one": "{{count}} Minute",
+        "minutes_other": "{{count}} Minuten",
+        "hours_one": "{{count}} Stunde",
+        "hours_other": "{{count}} Stunden",
+        "days_one": "{{count}} Tag",
+        "days_other": "{{count}} Tage"
+      }
+    },
+    "userNav": {
+      "myAccount": "Mein Konto",
+      "personalAccount": "Persönliches Konto",
+      "settings": "Einstellungen",
+      "appearance": "Erscheinungsbild",
+      "theme": {
+        "light": "Hell",
+        "dark": "Dunkel",
+        "system": "System"
+      },
+      "signOut": "Abmelden",
+      "signOutFailed": "Abmelden fehlgeschlagen"
     }
   }
 }

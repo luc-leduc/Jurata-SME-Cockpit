@@ -783,7 +783,16 @@
       "cancel": "Cancel",
       "date": "Date",
       "description": "Description",
-      "amount": "Amount"
+      "amount": "Amount",
+      "importProgress": "{{processed}} of {{total}} transactions imported ({{percent}}%)",
+      "notification": {
+        "title": "Excel Import in progress...",
+        "cancel": "Cancel",
+        "now": "Now",
+        "completed": "Excel Import completed",
+        "completedMessage": "{{total}} transactions successfully imported",
+        "failed": "Excel Import failed"
+      }
     },
     "buttons": {
       "save": "Save",
@@ -798,6 +807,34 @@
       "aiSuggestions": "AI suggestions",
       "remainingAccounts": "Remaining accounts",
       "allAccounts": "All accounts"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "markAllAsRead": "Mark all as read",
+      "noNotifications": "No notifications",
+      "unreadCount": "{{count}} unread",
+      "time": {
+        "now": "Now",
+        "minutes_one": "{{count}} minute",
+        "minutes_other": "{{count}} minutes",
+        "hours_one": "{{count}} hour",
+        "hours_other": "{{count}} hours",
+        "days_one": "{{count}} day",
+        "days_other": "{{count}} days"
+      }
+    },
+    "userNav": {
+      "myAccount": "My Account",
+      "personalAccount": "Personal Account",
+      "settings": "Settings",
+      "appearance": "Appearance",
+      "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "signOut": "Sign out",
+      "signOutFailed": "Sign out failed"
     }
   }
 }

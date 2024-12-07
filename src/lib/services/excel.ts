@@ -162,6 +162,7 @@ import { Account } from '../types';
 import { createTransaction } from './transactions';
 import { addNotification, updateNotification, removeNotification } from '../notifications';
 import readXlsx from 'read-excel-file';
+import i18next from 'i18next';
 
 // Types
 export interface ParsedTransaction {
@@ -324,12 +325,12 @@ export async function importTransactions(
   const importId = importManager.startImport(selectedTransactions.length, onProgress);
 
   const notificationId = addNotification({
-    title: 'Excel Import läuft...',
-    message: 'Import wird gestartet...',
+    title: i18next.t('components.excelImport.notification.title'),
+    message: i18next.t('components.excelImport.importProgress', { processed: 0, total: selectedTransactions.length, percent: 0 }),
     type: 'progress',
     progress: 0,
     actions: [{
-      label: 'Abbrechen',
+      label: i18next.t('components.excelImport.notification.cancel'),
       variant: 'destructive',
       onClick: () => importManager.cancelImport(importId)
     }]
@@ -369,15 +370,15 @@ export async function importTransactions(
       // Update both import manager and notification
       importManager.updateProgress(importId, processed);
       updateNotification(notificationId, {
-        message: `${processed} von ${total} Buchungen importiert...`,
+        message: i18next.t('components.excelImport.importProgress', { processed, total, percent: progress }),
         progress
       });
     }
 
     removeNotification(notificationId);
     addNotification({
-      title: 'Excel Import abgeschlossen',
-      message: `${total} Buchungen erfolgreich importiert`,
+      title: i18next.t('components.excelImport.notification.completed'),
+      message: i18next.t('components.excelImport.notification.completedMessage', { total }),
       type: 'success'
     });
 
@@ -386,7 +387,7 @@ export async function importTransactions(
     const errorMessage = error instanceof Error ? error.message : 'Unbekannter Fehler';
     removeNotification(notificationId);
     addNotification({
-      title: 'Excel Import fehlgeschlagen',
+      title: i18next.t('components.excelImport.notification.failed'),
       message: errorMessage,
       type: 'error'
     });

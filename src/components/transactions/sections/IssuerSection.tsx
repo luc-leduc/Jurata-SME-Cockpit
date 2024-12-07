@@ -18,17 +18,17 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
 
   return (
     <TransactionSection
-      title={t('pages.journal.sections.issuer.title')}
+      title={t('journal.issuer.title')}
       isOpen={isOpen}
       onToggle={onToggle}
       status={{
         isComplete: Boolean(form.watch('issuer_company') && form.watch('issuer_city')),
         isProcessing: receipt?.processing,
-        processingText: t('pages.journal.sections.issuer.processing'),
+        processingText: t('journal.issuer.processing'),
         hasAiData: Boolean(form.watch('issuer_company') || form.watch('issuer_city')),
         summary: form.watch('issuer_company')
           ? `${form.watch('issuer_company')}${form.watch('issuer_city') ? `, ${form.watch('issuer_city')}` : ''}`
-          : t('pages.journal.sections.issuer.notRecorded')
+          : t('journal.issuer.notRecorded')
       }}
     >
       <div className="grid gap-4">
@@ -37,9 +37,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
           name="issuer_company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('pages.journal.sections.issuer.company')}</FormLabel>
+              <FormLabel>{t('journal.issuer.company')}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder={t('pages.journal.sections.issuer.companyPlaceholder')} />
+                <Input {...field} placeholder={t('journal.issuer.companyPlaceholder')} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -52,9 +52,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
             name="issuer_first_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('pages.journal.sections.issuer.firstName')}</FormLabel>
+                <FormLabel>{t('journal.issuer.firstName')}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder={t('pages.journal.sections.issuer.firstNamePlaceholder')} />
+                  <Input {...field} placeholder={t('journal.issuer.firstNamePlaceholder')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -66,9 +66,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
             name="issuer_last_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('pages.journal.sections.issuer.lastName')}</FormLabel>
+                <FormLabel>{t('journal.issuer.lastName')}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder={t('pages.journal.sections.issuer.lastNamePlaceholder')} />
+                  <Input {...field} placeholder={t('journal.issuer.lastNamePlaceholder')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -81,9 +81,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
           name="issuer_street"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('pages.journal.sections.issuer.street')}</FormLabel>
+              <FormLabel>{t('journal.issuer.street')}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder={t('pages.journal.sections.issuer.streetPlaceholder')} />
+                <Input {...field} placeholder={t('journal.issuer.streetPlaceholder')} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -96,9 +96,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
             name="issuer_zip"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('pages.journal.sections.issuer.zip')}</FormLabel>
+                <FormLabel>{t('journal.issuer.zip')}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder={t('pages.journal.sections.issuer.zipPlaceholder')} />
+                  <Input {...field} placeholder={t('journal.issuer.zipPlaceholder')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -110,9 +110,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
             name="issuer_city"
             render={({ field }) => (
               <FormItem className="col-span-2">
-                <FormLabel>{t('pages.journal.sections.issuer.city')}</FormLabel>
+                <FormLabel>{t('journal.issuer.city')}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder={t('pages.journal.sections.issuer.cityPlaceholder')} />
+                  <Input {...field} placeholder={t('journal.issuer.cityPlaceholder')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -125,9 +125,9 @@ export function IssuerSection({ form, isOpen, onToggle, receipt }: IssuerSection
           name="issuer_country"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('pages.journal.sections.issuer.country')}</FormLabel>
+              <FormLabel>{t('journal.issuer.country')}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder={t('pages.journal.sections.issuer.countryPlaceholder')} />
+                <Input {...field} placeholder={t('journal.issuer.countryPlaceholder')} />
               </FormControl>
               <FormMessage />
             </FormItem>

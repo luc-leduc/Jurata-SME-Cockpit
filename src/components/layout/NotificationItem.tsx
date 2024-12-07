@@ -3,6 +3,7 @@ import { Progress } from "@/components/ui/progress";
 import { CheckCircle, AlertCircle, Loader2, Archive } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Notification } from "@/lib/notifications";
+import { useTranslation } from "react-i18next";
 
 interface NotificationItemProps {
   notification: Notification;
@@ -24,17 +25,17 @@ function getIcon(type?: string) {
   }
 }
 
-function formatTimestamp(date: Date): string {
+function formatTimestamp(date: Date, t: (key: string, options?: any) => string): string {
   const now = new Date();
   const diff = now.getTime() - date.getTime();
   const minutes = Math.floor(diff / 1000 / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if (days > 0) return `${days} ${days === 1 ? 'Tag' : 'Tage'}`;
-  if (hours > 0) return `${hours} ${hours === 1 ? 'Stunde' : 'Stunden'}`;
-  if (minutes > 0) return `${minutes} ${minutes === 1 ? 'Minute' : 'Minuten'}`;
-  return 'Jetzt';
+  if (days > 0) return t('components.notifications.time.days', { count: days });
+  if (hours > 0) return t('components.notifications.time.hours', { count: hours });
+  if (minutes > 0) return t('components.notifications.time.minutes', { count: minutes });
+  return t('components.notifications.time.now');
 }
 
 function canArchive(notification: Notification) {
@@ -49,6 +50,7 @@ export function NotificationItem({
   onArchive,
   onAction 
 }: NotificationItemProps) {
+  const { t } = useTranslation();
   const handleActionClick = (e: React.MouseEvent, action: { onClick: () => void }) => {
     e.preventDefault();
     onAction(e, action);
@@ -78,7 +80,7 @@ export function NotificationItem({
           <div className="font-medium">
             <div className="flex items-center gap-2">
               <span className="truncate">{notification.title}</span>
-              <time className="text-xs text-muted-foreground whitespace-nowrap">{formatTimestamp(notification.createdAt)}</time>
+              <time className="text-xs text-muted-foreground whitespace-nowrap">{formatTimestamp(notification.createdAt, t)}</time>
             </div>
           </div>
           
