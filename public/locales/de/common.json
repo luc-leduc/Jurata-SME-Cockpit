@@ -1,0 +1,797 @@
+{
+  "navigation": {
+    "title": "Navigation",
+    "dashboard": "Dashboard",
+    "jurataAISection": {
+      "title": "Jurata AI",
+      "newRequest": "Neue Anfrage an Jurata AI"
+    },
+    "tasksSection": {
+      "title": "Aufgaben",
+      "newTask": "Neue Aufgabe"
+    },
+    "documents": "Dokumentablage",
+    "documentsSection": {
+      "title": "Dokumentablage",
+      "newDocument": "Neues Dokument",
+      "uploadDocument": "Dokument hochladen",
+      "searchDocuments": "Dokumente durchsuchen",
+      "noDocuments": "Keine Dokumente gefunden",
+      "documentTypes": {
+        "all": "Alle Dokumente",
+        "contracts": "Verträge",
+        "invoices": "Rechnungen",
+        "other": "Sonstige"
+      }
+    },
+    "legal": {
+      "title": "Recht",
+      "analysis": "Vertragsanalyse",
+      "templates": "Vertragsvorlagen",
+      "management": "Vertragsverwaltung"
+    },
+    "accounting": {
+      "title": "Buchhaltung",
+      "journal": "Journal",
+      "balance": "Bilanz",
+      "income": "Erfolgsrechnung",
+      "payroll": "Lohnbuchhaltung",
+      "reports": "Berichte"
+    },
+    "taxes": "Steuern",
+    "academy": "Academy",
+    "marketplace": "Marketplace",
+    "settings": "Einstellungen",
+    "account": "Persönliches Konto"
+  },
+  "tasks": {
+    "title": "Aufgaben",
+    "description": "Verwalten Sie Ihre Aufgaben und To-dos",
+    "newTask": "Neue Aufgabe",
+    "editTask": "Aufgabe bearbeiten",
+    "searchPlaceholder": "Aufgaben suchen...",
+    "status": {
+      "open": "Offen",
+      "inProgress": "In Bearbeitung",
+      "completed": "Abgeschlossen",
+      "cancelled": "Abgebrochen"
+    },
+    "priority": {
+      "low": "Niedrig",
+      "medium": "Mittel",
+      "high": "Hoch",
+      "urgent": "Dringend"
+    },
+    "area": {
+      "accounting": "Buchhaltung",
+      "taxes": "Steuern",
+      "payroll": "Lohnbuchhaltung",
+      "documents": "Dokumente",
+      "general": "Allgemein"
+    },
+    "form": {
+      "title": "Titel",
+      "titlePlaceholder": "Aufgabentitel eingeben",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Aufgabenbeschreibung eingeben",
+      "dueDate": "Fälligkeitsdatum",
+      "priority": "Priorität",
+      "area": "Bereich",
+      "status": "Status",
+      "assignee": "Zugewiesen an",
+      "assigneePlaceholder": "Benutzer auswählen",
+      "cancel": "Abbrechen",
+      "submit": "Aufgabe erstellen",
+      "delete": "Aufgabe löschen",
+      "validation": {
+        "titleRequired": "Titel muss mindestens 3 Zeichen lang sein"
+      }
+    },
+    "messages": {
+      "createSuccess": "Aufgabe wurde erfolgreich erstellt",
+      "createError": "Fehler beim Erstellen der Aufgabe",
+      "updateSuccess": "Aufgabe wurde erfolgreich aktualisiert",
+      "updateError": "Fehler beim Aktualisieren der Aufgabe",
+      "deleteSuccess": "Aufgabe wurde erfolgreich gelöscht",
+      "deleteError": "Fehler beim Löschen der Aufgabe",
+      "deleteConfirm": "Aufgabe löschen",
+      "deleteWarning": "Möchten Sie diese Aufgabe wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "loading": "Lade Aufgaben...",
+    "noTasks": "Keine Aufgaben gefunden",
+    "sorting": {
+      "placeholder": "Sortieren nach",
+      "dueDate": "Fälligkeitsdatum",
+      "priority": "Priorität",
+      "createdAt": "Erstelldatum",
+      "title": "Titel"
+    },
+    "dueDate": {
+      "today": "Heute fällig",
+      "tomorrow": "Morgen fällig",
+      "overdue": "{{days}} {{dayText}} überfällig",
+      "dueIn": "Fällig in {{days}} {{dayText}}",
+      "day": "Tag",
+      "days": "Tagen"
+    },
+    "filters": {
+      "status": "Status",
+      "priority": "Priorität"
+    },
+    "sorting": {
+      "due_date": "Fälligkeitsdatum",
+      "priority": "Priorität",
+      "created_at": "Erstelldatum",
+      "title": "Titel",
+      "placeholder": "Sortieren nach"
+    }
+  },
+  "dashboard": {
+    "welcome": {
+      "default": "Willkommen zurück",
+      "greeting": "Guten Tag",
+      "message": "Willkommen in Ihrem persönlichen Dashboard. Hier finden Sie eine Übersicht Ihrer wichtigsten Aufgaben, aktuelle Finanzkennzahlen sowie die Entwicklung von Umsatz und Gewinn im Jahresverlauf."
+    },
+    "tasks": {
+      "title": "Wichtige Aufgaben",
+      "description": "Aufgaben, die in den nächsten 2 Wochen fällig sind",
+      "allTasks": "Alle Aufgaben",
+      "newTask": "Neue Aufgabe"
+    },
+    "financialMetrics": {
+      "title": "Finanzkennzahlen",
+      "monthlyOverview": "Monatsübersicht"
+    },
+    "yearlyOverview": {
+      "title": "Jahresübersicht 2024"
+    },
+    "stats": {
+      "monthlyRevenue": "Monatlicher Umsatz",
+      "openCreditorInvoices": "Offene Kreditorenrechnungen",
+      "openInvoicesCount": "{{count}} offene Rechnungen",
+      "noOpenInvoices": "Keine offenen Rechnungen",
+      "profit": "Gewinn",
+      "loss": "Verlust",
+      "transactions": "Transaktionen",
+      "transactionsCount": "{{count}} Buchungen",
+      "monthlyProfit": "Monatlicher Gewinn",
+      "monthlyLoss": "Monatlicher Verlust",
+      "profitChange": "{{value}}% im Vergleich zum Vormonat",
+      "revenueChange": "{{value}}% im Vergleich zum Vormonat"
+    },
+    "cashFlow": {
+      "title": "Flüssige Mittel",
+      "subtitle": "Bewegungen auf Bank- und Kassenkonten",
+      "inflow": "Eingehend:",
+      "outflow": "Ausgehend:",
+      "noData": "Keine Bewegungen verfügbar",
+      "tooltipIncome": "Eingehend",
+      "tooltipExpenses": "Ausgehend"
+    },
+    "jurataAI": {
+      "title": "Jurata AI",
+      "description": "Ihr KI-Assistent für alle geschäftlichen Angelegenheiten",
+      "placeholder": "Stellen Sie mir eine Frage...",
+      "submit": "Senden",
+      "shortcut": "{{key}} zum Senden",
+      "error": "Konversation konnte nicht gestartet werden"
+    }
+  },
+  "search": {
+    "title": "Suche",
+    "placeholder": "Schnellsuche...",
+    "inputPlaceholder": "Suchen...",
+    "quickAccess": "Schnellzugriff",
+    "noResults": "Keine Ergebnisse gefunden.",
+    "shortcut": "{{key}} drücken zum Suchen"
+  },
+  "actions": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "upload": "Hochladen",
+    "download": "Herunterladen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "confirm": "Bestätigen"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "signup": "Registrieren"
+  },
+  "account": {
+    "language": {
+      "title": "Spracheinstellungen",
+      "description": "Wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche",
+      "current": "Aktuelle Sprache"
+    }
+  },
+  "months": {
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mär",
+    "Apr": "Apr",
+    "May": "Mai",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Aug",
+    "Sep": "Sep",
+    "Oct": "Okt",
+    "Nov": "Nov",
+    "Dec": "Dez",
+    "short": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mär",
+      "apr": "Apr",
+      "may": "Mai",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Okt",
+      "nov": "Nov",
+      "dec": "Dez"
+    }
+  },
+  "charts": {
+    "revenue": "Umsatzentwicklung",
+    "profitLoss": "Gewinn & Verlust",
+    "profitLoss.subtitle": "Monatliche Entwicklung des Geschäftsergebnisses",
+    "profitLoss.totalProfit": "Total Gewinn",
+    "profitLoss.totalLoss": "Total Verlust",
+    "cashFlow": "Cash Flow",
+    "cashFlow.subtitle": "Bewegungen auf Bank- und Kassenkonten",
+    "cashFlow.inflow": "Einzahlungen",
+    "cashFlow.outflow": "Auszahlungen",
+    "month": "Monat",
+    "result": "Ergebnis",
+    "profit": "Gewinn",
+    "loss": "Verlust",
+    "revenue.short": "Umsatz",
+    "expenses": "Aufwand",
+    "amount": "Betrag",
+    "noDataAvailable": "Keine Daten verfügbar"
+  },
+  "pages": {
+    "tasks": {
+      "title": "Aufgaben",
+      "newTask": "Neue Aufgabe",
+      "searchPlaceholder": "Aufgaben suchen...",
+      "noTasks": "Keine Aufgaben gefunden",
+      "priority": {
+        "title": "Priorität",
+        "urgent": "Dringend",
+        "high": "Hoch",
+        "medium": "Mittel",
+        "low": "Niedrig"
+      },
+      "status": {
+        "title": "Status",
+        "open": "Offen",
+        "inProgress": "In Bearbeitung",
+        "completed": "Abgeschlossen",
+        "canceled": "Abgebrochen"
+      },
+      "dueDate": "Fälligkeitsdatum",
+      "assignee": "Zugewiesen an",
+      "description": "Beschreibung"
+    },
+    "journal": {
+      "title": "Buchungsjournal",
+      "description": "Erfassen und verwalten Sie Ihre Geschäftsvorfälle",
+      "accountTransactions": "{{count}} Buchungen auf Konto {{account}}",
+      "totalTransactions": "{{count}} Buchungen",
+      "exportCsv": "CSV exportieren",
+      "newTransaction": "Neue Buchung",
+      "searchPlaceholder": "Suchen...",
+      "allDebitAccounts": "Alle Soll-Konten",
+      "allCreditAccounts": "Alle Haben-Konten",
+      "loading": "Lade Buchungen...",
+      "loadingMore": "Lade weitere Buchungen...",
+      "noTransactions": "Keine Buchungen gefunden",
+      "table": {
+        "date": "Datum",
+        "documentRef": "Beleg",
+        "description": "Beschreibung",
+        "debit": "Soll",
+        "credit": "Haben",
+        "amount": "Betrag"
+      },
+      "csv": {
+        "date": "Datum",
+        "documentRef": "Beleg-Nr.",
+        "description": "Beschreibung",
+        "debitAccount": "Soll-Konto",
+        "debitAccountName": "Soll-Konto Name",
+        "creditAccount": "Haben-Konto",
+        "creditAccountName": "Haben-Konto Name",
+        "amount": "Betrag",
+        "dueDate": "Fälligkeitsdatum",
+        "servicePeriodStart": "Leistungsperiode von",
+        "servicePeriodEnd": "Leistungsperiode bis",
+        "issuer": "Rechnungssteller",
+        "street": "Strasse",
+        "zip": "PLZ",
+        "city": "Ort",
+        "country": "Land"
+      },
+      "excel": {
+        "importExcel": "Excel importieren",
+        "title": "Excel Import",
+        "selectAllMonths": "Alle Monate auswählen",
+        "selectedTransactions": "{{count}} Buchungen ausgewählt",
+        "noTransactionsSelected": "Keine Buchungen ausgewählt",
+        "continueInBackground": "Im Hintergrund fortsetzen",
+        "cancel": "Abbrechen",
+        "startImport": "Import starten",
+        "parseError": "Fehler beim Lesen der Excel-Datei"
+      },
+      "newTransaction": "Neue Buchung",
+      "newTransactionDescription": "Neue Buchung mit Beleg erstellen",
+      "messages": {
+        "receiptProcessed": "Beleg erfolgreich verarbeitet",
+        "receiptProcessingError": "Fehler bei der Verarbeitung des Belegs",
+        "selectAccounts": "Bitte Soll- und Habenkonto auswählen",
+        "transactionCreated": "Buchung erfolgreich erstellt",
+        "transactionCreateError": "Fehler beim Erstellen der Buchung"
+      },
+      "sections": {
+        "issuer": {
+          "title": "Aussteller",
+          "processing": "Jurata AI extrahiert Daten",
+          "notRecorded": "Nicht erfasst",
+          "company": "Firma",
+          "companyPlaceholder": "Firmenname",
+          "firstName": "Vorname",
+          "firstNamePlaceholder": "Vorname",
+          "lastName": "Nachname",
+          "lastNamePlaceholder": "Nachname",
+          "street": "Adresse",
+          "streetPlaceholder": "Straße und Hausnummer",
+          "zip": "PLZ",
+          "zipPlaceholder": "Postleitzahl",
+          "city": "Ort",
+          "cityPlaceholder": "Ort",
+          "country": "Land",
+          "countryPlaceholder": "Land"
+        },
+        "document": {
+          "title": "Belegdetails",
+          "processing": "Jurata AI extrahiert Daten",
+          "notRecorded": "Nicht erfasst",
+          "selectDate": "Datum auswählen",
+          "date": "Belegdatum",
+          "dueDate": "Fälligkeitsdatum",
+          "servicePeriodStart": "Leistungsperiode von",
+          "servicePeriodEnd": "Leistungsperiode bis",
+          "reference": "Beleg-Ref.",
+          "referencePlaceholder": "z.B. RE2024-001",
+          "description": "Beschreibung",
+          "descriptionPlaceholder": "Buchungsbeschreibung",
+          "summary": "{{ref}} vom {{date}}{{dueDate ? ` (fällig: ${dueDate})` : ''}}"
+        },
+        "booking": {
+          "title": "Buchung",
+          "processing": "Jurata AI extrahiert Daten",
+          "notRecorded": "Nicht erfasst",
+          "debitAccount": "Soll",
+          "creditAccount": "Haben",
+          "taxRate": "MwSt. %",
+          "taxRatePlaceholder": "0.00",
+          "currency": "Währung",
+          "currencyPlaceholder": "CHF",
+          "currencyCHF": "CHF",
+          "currencyEUR": "EUR",
+          "currencyUSD": "USD",
+          "amount": "Betrag",
+          "amountPlaceholder": "0.00",
+          "selectDebitAccount": "Sollkonto auswählen",
+          "selectCreditAccount": "Habenkonto auswählen",
+          "addPosition": "Position hinzufügen",
+          "actions": "Aktionen",
+          "summary": "{{debit}} an {{credit}} | {{amount}}"
+        }
+      }
+    },
+    "legal": {
+      "analysis": {
+        "title": "Vertragsanalyse",
+        "upload": "Vertrag hochladen",
+        "analyze": "Analysieren",
+        "results": "Analyseergebnisse"
+      },
+      "management": {
+        "title": "Vertragsverwaltung",
+        "status": "Status",
+        "party": "Vertragspartner",
+        "value": "Vertragswert"
+      }
+    },
+    "accounting": {
+      "balance": {
+        "title": "Bilanz",
+        "assets": "Aktiven",
+        "liabilities": "Passiven",
+        "equity": "Eigenkapital"
+      },
+      "income": {
+        "title": "Erfolgsrechnung",
+        "revenue": "Ertrag",
+        "expenses": "Aufwand",
+        "profit": "Gewinn",
+        "loss": "Verlust"
+      },
+      "payroll": {
+        "title": "Lohnbuchhaltung",
+        "employees": "Mitarbeiter",
+        "salaries": "Gehälter",
+        "deductions": "Abzüge"
+      },
+      "reports": {
+        "title": "Berichte",
+        "generate": "Bericht erstellen",
+        "download": "Bericht herunterladen",
+        "period": "Zeitraum"
+      }
+    },
+    "taxes": {
+      "title": "Steuern",
+      "vatReturn": "MWST-Abrechnung",
+      "taxReturn": "Steuererklärung",
+      "calculations": "Steuerberechnungen"
+    },
+    "academy": {
+      "title": "Academy",
+      "courses": "Kurse",
+      "progress": "Fortschritt",
+      "certificates": "Zertifikate"
+    },
+    "marketplace": {
+      "title": "Marketplace",
+      "services": "Dienstleistungen",
+      "products": "Produkte",
+      "cart": "Warenkorb"
+    },
+    "upload": {
+      "title": "Dokumente",
+      "dropzone": "Dateien hier ablegen oder klicken zum Hochladen",
+      "processing": "Wird verarbeitet...",
+      "success": "Upload erfolgreich",
+      "uploadDescription": "Laden Sie Ihre Dokumente sicher und einfach hoch",
+      "processingDocument": "Dokument wird von Jurata AI analysiert",
+      "dragAndDrop": "Zum Hochladen klicken oder Dokument hier ablegen"
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "company": "Unternehmen",
+      "users": "Benutzer",
+      "taxes": "Steuern",
+      "accounts": "Konten"
+    },
+    "documents": {
+      "title": "Dokumentablage",
+      "description": "Laden Sie Ihre Dokumente sicher hoch und verwalten Sie diese",
+      "upload": {
+        "title": "Dokumente hochladen",
+        "description": "Laden Sie Ihre Dokumente sicher und einfach hoch",
+        "dropzone": "Dateien hier ablegen oder klicken zum Hochladen",
+        "processing": "Wird verarbeitet...",
+        "success": "Upload erfolgreich",
+        "uploadDescription": "Laden Sie Ihre Dokumente sicher und einfach hoch",
+        "processingDocument": "Dokument wird von Jurata AI analysiert",
+        "dragAndDrop": "Zum Hochladen klicken oder Dokument hier ablegen"
+      }
+    }
+  },
+  "jurataAIPage": {
+    "title": "Jurata AI",
+    "description": "Nutzen Sie Jurata AI, um sofortige Unterstützung in den Bereichen Recht, Buchhaltung und Steuern zu erhalten. Bei Bedarf verbinden wir Sie mit passenden Experten. Sie werden über alle Kosten vorgängig informiert.",
+    "search": {
+      "placeholder": "Konversationen durchsuchen..."
+    },
+    "newConversation": "Neue Konversation",
+    "loading": "Lade Konversationen...",
+    "noConversations": "Keine Konversationen vorhanden",
+    "noResults": "Keine Konversationen gefunden",
+    "conversation": {
+      "from": "Konversation vom {{date}}",
+      "error": "Fehler beim Erstellen der Konversation"
+    }
+  },
+  "tasksPage": {
+    "title": "Aufgaben",
+    "description": "Erstellen und verwalten Sie Ihre Aufgaben",
+    "newTask": "Neue Aufgabe",
+    "editTask": "Aufgabe bearbeiten",
+    "searchPlaceholder": "Aufgaben suchen...",
+    "search": {
+      "placeholder": "Aufgaben suchen..."
+    },
+    "status": {
+      "open": "Offen",
+      "inProgress": "In Bearbeitung",
+      "completed": "Abgeschlossen",
+      "cancelled": "Abgebrochen"
+    },
+    "priority": {
+      "low": "Niedrig",
+      "medium": "Mittel",
+      "high": "Hoch",
+      "urgent": "Dringend"
+    },
+    "area": {
+      "accounting": "Buchhaltung",
+      "taxes": "Steuern",
+      "payroll": "Lohnbuchhaltung",
+      "documents": "Dokumente",
+      "general": "Allgemein"
+    },
+    "form": {
+      "title": "Titel",
+      "titlePlaceholder": "Aufgabentitel eingeben",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Aufgabenbeschreibung eingeben",
+      "dueDate": "Fälligkeitsdatum",
+      "dueDatePlaceholder": "Fälligkeitsdatum auswählen",
+      "priority": "Priorität",
+      "priorityPlaceholder": "Priorität auswählen",
+      "area": "Bereich",
+      "areaPlaceholder": "Bereich auswählen",
+      "status": "Status",
+      "statusPlaceholder": "Status auswählen",
+      "assignee": "Zugewiesen an",
+      "assigneePlaceholder": "Benutzer auswählen",
+      "cancel": "Abbrechen",
+      "submit": "Aufgabe erstellen",
+      "update": "Änderungen speichern",
+      "delete": "Aufgabe löschen",
+      "validation": {
+        "titleRequired": "Titel muss mindestens 3 Zeichen lang sein"
+      }
+    },
+    "messages": {
+      "createSuccess": "Aufgabe wurde erfolgreich erstellt",
+      "createError": "Fehler beim Erstellen der Aufgabe",
+      "updateSuccess": "Aufgabe wurde erfolgreich aktualisiert",
+      "updateError": "Fehler beim Aktualisieren der Aufgabe",
+      "deleteSuccess": "Aufgabe wurde erfolgreich gelöscht",
+      "deleteError": "Fehler beim Löschen der Aufgabe",
+      "deleteConfirm": "Aufgabe löschen",
+      "deleteWarning": "Möchten Sie diese Aufgabe wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "dueDate": {
+      "today": "Heute fällig",
+      "tomorrow": "Morgen fällig",
+      "day": "Tag",
+      "days": "Tage",
+      "overdue": "{{days}} {{dayText}} überfällig",
+      "dueIn": "Fällig in {{days}} {{dayText}}"
+    },
+    "filters": {
+      "status": "Status",
+      "priority": "Priorität"
+    },
+    "sorting": {
+      "due_date": "Fälligkeitsdatum",
+      "priority": "Priorität",
+      "created_at": "Erstelldatum",
+      "title": "Titel",
+      "placeholder": "Sortieren nach"
+    },
+    "loading": "Lade Aufgaben...",
+    "noTasks": "Keine Aufgaben gefunden"
+  },
+  "chat": {
+    "newConversation": "Neue Konversation",
+    "untitledConversation": "Neue Konversation"
+  },
+  "chatDetail": {
+    "title": "Konversation",
+    "conversationFrom": "Konversation vom {{date}}",
+    "input": {
+      "placeholder": "Nachricht eingeben...",
+      "submit": "Nachricht senden",
+      "submitHint": "{{key}} zum Senden"
+    },
+    "deleteDialog": {
+      "title": "Konversation löschen",
+      "description": "Möchten Sie diese Konversation wirklich löschen? Sie wird aus Ihrer Übersicht entfernt.",
+      "cancel": "Abbrechen",
+      "confirm": "Konversation löschen",
+      "deleting": "Wird gelöscht..."
+    }
+  },
+  "toast": {
+    "conversationDeleted": "Konversation wurde gelöscht",
+    "errorDeletingConversation": "Fehler beim Löschen der Konversation"
+  },
+  "errors": {
+    "conversationCreation": "Fehler beim Erstellen der Konversation",
+    "somethingWentWrong": "Etwas ist schiefgelaufen",
+    "tryAgain": "Bitte versuchen Sie es erneut",
+    "uploadFailed": "Upload fehlgeschlagen",
+    "saveFailed": "Speichern fehlgeschlagen",
+    "loadFailed": "Laden fehlgeschlagen",
+    "processingFailed": "Verarbeitung fehlgeschlagen"
+  },
+  "legal": {
+    "title": "Recht",
+    "analysis": "Vertragsanalyse",
+    "templates": "Vertragsvorlagen",
+    "management": "Vertragsverwaltung",
+    "contractAnalysis": {
+      "title": "Vertragsanalyse",
+      "description": "Laden Sie Ihren Vertrag zur KI-gestützten Analyse hoch",
+      "uploadSuccess": "Vertrag wurde erfolgreich analysiert",
+      "uploadError": "Analyse fehlgeschlagen",
+      "notAContract": "Das hochgeladene Dokument scheint kein Vertrag zu sein",
+      "upload": {
+        "dragAndDrop": "Klicken Sie zum Hochladen oder ziehen Sie einen Vertrag hierher",
+        "processing": "Dokument wird von Jurata AI analysiert",
+        "removeFile": "Datei entfernen"
+      },
+      "details": {
+        "notCaptured": "Nicht erfasst",
+        "processingText": "Jurata AI extrahiert Daten",
+        "status": {
+          "invalid": "Ungültig",
+          "signed": "Unterzeichnet",
+          "draft": "Entwurf",
+          "partiallySigned": "Teilweise unterzeichnet"
+        },
+        "party": {
+          "title1": "Vertragspartei 1",
+          "title2": "Vertragspartei 2",
+          "name": "Name",
+          "address": "Adresse",
+          "notRecognized": "Nicht erkannt",
+          "signatories": "Unterzeichner",
+          "signedBy": "Unterzeichnet von",
+          "signedOn": "Unterzeichnet am",
+          "noSignature": "Keine Unterschrift gefunden"
+        },
+        "redFlags": {
+          "title": "Risikoanalyse",
+          "description": "Potenzielle Risiken und Probleme im Vertrag",
+          "noIssues": "Keine kritischen Klauseln gefunden",
+          "severity": {
+            "high": "Gravierend",
+            "medium": "Kritisch",
+            "low": "Möglicherweise kritisch"
+          },
+          "found": "kritische Klauseln gefunden",
+          "notFound": "Keine kritischen Klauseln gefunden",
+          "card": {
+            "title": "Risikoanalyse",
+            "description": "Kritische Klauseln und potenzielle Risiken",
+            "loading": "Analysiere Risiken...",
+            "noRisks": "Keine Risiken gefunden",
+            "risksFound": "{{count}} Risiken gefunden"
+          }
+        },
+        "sections": {
+          "generalInfo": {
+            "title": "Allgemeine Informationen",
+            "type": "Vertragsart",
+            "description": "Beschreibung",
+            "summary": "Zusammenfassung",
+            "status": "Status",
+            "startDate": "Startdatum",
+            "endDate": "Enddatum",
+            "value": "Vertragswert"
+          },
+          "parties": {
+            "title": "Vertragsparteien",
+            "description": "Details der Vertragsparteien"
+          },
+          "redFlags": {
+            "title": "Risikoanalyse",
+            "description": "Potenzielle Risiken und Probleme im Vertrag",
+            "noIssues": "Keine kritischen Klauseln gefunden",
+            "severity": {
+              "high": "Gravierend",
+              "medium": "Kritisch",
+              "low": "Möglicherweise kritisch"
+            },
+            "found": "kritische Klauseln gefunden",
+            "notFound": "Keine kritischen Klauseln gefunden",
+            "card": {
+              "title": "Risikoanalyse",
+              "description": "Kritische Klauseln und potenzielle Risiken",
+              "loading": "Analysiere Risiken...",
+              "noRisks": "Keine Risiken gefunden",
+              "risksFound": "{{count}} Risiken gefunden"
+            }
+          }
+        }
+      }
+    },
+    "contractTemplates": {
+      "title": "Vertragsvorlagen",
+      "description": "Erstellen Sie neue Verträge aus vorgefertigten Vorlagen",
+      "comingSoon": "Diese Funktion wird in Kürze verfügbar sein",
+      "sections": {
+        "templates": {
+          "title": "Verfügbare Vorlagen",
+          "description": "Wählen Sie aus unserer Auswahl an vorgefertigten Vorlagen",
+          "noTemplates": "Noch keine Vorlagen verfügbar"
+        },
+        "recent": {
+          "title": "Kürzlich erstellte Verträge",
+          "description": "Ihre kürzlich erstellten Verträge",
+          "noContracts": "Noch keine Verträge erstellt"
+        }
+      }
+    },
+    "contractManagement": {
+      "title": "Vertragsverwaltung",
+      "description": "Verwalten Sie Ihre Verträge und behalten Sie den Überblick",
+      "comingSoon": "Diese Funktion wird in Kürze verfügbar sein",
+      "sections": {
+        "overview": {
+          "title": "Vertragsübersicht",
+          "description": "Alle Ihre Verträge auf einen Blick",
+          "noContracts": "Keine Verträge gefunden"
+        },
+        "status": {
+          "active": "Aktiv",
+          "expired": "Abgelaufen",
+          "draft": "Entwurf",
+          "terminated": "Beendet"
+        },
+        "filters": {
+          "title": "Filter",
+          "status": "Status",
+          "type": "Vertragsart",
+          "party": "Vertragspartei",
+          "date": "Zeitraum"
+        }
+      }
+    }
+  },
+  "documents": {
+    "uploadDescription": "Laden Sie Ihre Dokumente sicher und einfach hoch",
+    "processingDocument": "Dokument wird von Jurata AI analysiert",
+    "dragAndDrop": "Zum Hochladen klicken oder Dokument hier ablegen"
+  },
+  "toasts": {
+    "uploadSuccess": "Dokument wurde erfolgreich hochgeladen"
+  },
+  "components": {
+    "fileUpload": {
+      "dragAndDrop": "Dateien hierher ziehen",
+      "clickToUpload": "Zum Hochladen klicken",
+      "or": "oder"
+    },
+    "receiptUpload": {
+      "belegWirdVonJurataAiAnalysiert": "Beleg wird von Jurata AI analysiert"
+    },
+    "buttons": {
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "delete": "Löschen",
+      "edit": "Bearbeiten"
+    },
+    "status": {
+      "saving": "Wird gespeichert...",
+      "loading": "Wird geladen...",
+      "processing": "Wird verarbeitet..."
+    },
+    "excelImport": {
+      "title": "Excel Import",
+      "selectAllMonths": "Alle Monate auswählen",
+      "transactions": "Buchungen",
+      "transactionsSelected": "{{count}} Buchungen ausgewählt",
+      "startImport": "Import starten",
+      "cancel": "Abbrechen",
+      "date": "Datum",
+      "description": "Beschreibung",
+      "amount": "Betrag"
+    }
+  }
+}
