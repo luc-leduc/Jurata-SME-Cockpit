@@ -2,6 +2,8 @@
   "navigation": {
     "title": "Navigation",
     "dashboard": "Dashboard",
+    "jurataAI": "Jurata AI",
+    "tasks": "Aufgaben",
     "jurataAISection": {
       "title": "Jurata AI",
       "newRequest": "Neue Anfrage an Jurata AI"
@@ -288,6 +290,8 @@
       "totalTransactions": "{{count}} Buchungen",
       "exportCsv": "CSV exportieren",
       "newTransaction": "Neue Buchung",
+      "newTransactionWithReceipt": "Neue Buchung mit Beleg erstellen",
+      "newTransactionDescription": "Neue Buchung mit Beleg erstellen",
       "searchPlaceholder": "Suchen...",
       "allDebitAccounts": "Alle Soll-Konten",
       "allCreditAccounts": "Alle Haben-Konten",
@@ -331,59 +335,66 @@
         "startImport": "Import starten",
         "parseError": "Fehler beim Lesen der Excel-Datei"
       },
-      "newTransaction": "Neue Buchung",
-      "newTransactionDescription": "Neue Buchung mit Beleg erstellen",
-      "messages": {
-        "receiptProcessed": "Beleg erfolgreich verarbeitet",
-        "receiptProcessingError": "Fehler bei der Verarbeitung des Belegs",
-        "selectAccounts": "Bitte Soll- und Habenkonto auswählen",
-        "transactionCreated": "Buchung erfolgreich erstellt",
-        "transactionCreateError": "Fehler beim Erstellen der Buchung"
-      },
       "sections": {
         "issuer": {
-          "title": "Aussteller",
+          "title": "Rechnungssteller",
           "processing": "Jurata AI extrahiert Daten",
           "notRecorded": "Nicht erfasst",
           "company": "Firma",
-          "companyPlaceholder": "Firmenname",
+          "companyPlaceholder": "Firmenname eingeben",
           "firstName": "Vorname",
-          "firstNamePlaceholder": "Vorname",
+          "firstNamePlaceholder": "Vorname eingeben",
           "lastName": "Nachname",
-          "lastNamePlaceholder": "Nachname",
-          "street": "Adresse",
-          "streetPlaceholder": "Straße und Hausnummer",
+          "lastNamePlaceholder": "Nachname eingeben",
+          "street": "Straße",
+          "streetPlaceholder": "Straße und Hausnummer eingeben",
           "zip": "PLZ",
-          "zipPlaceholder": "Postleitzahl",
+          "zipPlaceholder": "PLZ eingeben",
           "city": "Ort",
-          "cityPlaceholder": "Ort",
+          "cityPlaceholder": "Ort eingeben",
           "country": "Land",
-          "countryPlaceholder": "Land"
+          "countryPlaceholder": "Land eingeben"
         },
         "document": {
           "title": "Belegdetails",
           "processing": "Beleg wird verarbeitet...",
           "notRecorded": "Keine Belegdetails erfasst",
+          "type": "Belegart",
+          "typePlaceholder": "Belegart auswählen",
+          "number": "Belegnummer",
+          "numberPlaceholder": "Belegnummer eingeben",
           "date": "Belegdatum",
+          "datePlaceholder": "Belegdatum auswählen",
           "dueDate": "Fälligkeitsdatum",
-          "servicePeriodStart": "Leistungsperiode von",
-          "servicePeriodEnd": "Leistungsperiode bis",
-          "reference": "Beleg-Nr.",
-          "referencePlaceholder": "Beleg-Nr. eingeben",
+          "dueDatePlaceholder": "Fälligkeitsdatum auswählen",
+          "amount": "Betrag",
+          "amountPlaceholder": "Betrag eingeben",
+          "currency": "Währung",
+          "currencyPlaceholder": "Währung auswählen",
           "description": "Beschreibung",
           "descriptionPlaceholder": "Beschreibung eingeben",
-          "selectDate": "Datum wählen",
+          "servicePeriodStart": "Leistungsperiode von",
+          "servicePeriodEnd": "Leistungsperiode bis",
           "summary": "Beleg {{ref}} vom {{date}} (fällig: {{dueDate}})",
-          "summaryWithoutDueDate": "Beleg {{ref}} vom {{date}}"
+          "summaryWithoutDueDate": "Beleg {{ref}} vom {{date}}",
+          "reference": "Beleg-Nr.",
+          "referencePlaceholder": "Beleg-Nr. eingeben",
+          "selectDate": "Datum auswählen"
         },
         "booking": {
           "title": "Buchung",
           "processing": "Jurata AI extrahiert Daten",
           "notRecorded": "Nicht erfasst",
-          "debitAccount": "Soll",
-          "creditAccount": "Haben",
+          "debitAccount": "Soll-Konto",
+          "debitAccountPlaceholder": "Soll-Konto auswählen",
+          "creditAccount": "Haben-Konto",
+          "creditAccountPlaceholder": "Haben-Konto auswählen",
           "taxRate": "MwSt. %",
-          "taxRatePlaceholder": "0.00",
+          "taxRatePlaceholder": "Steuersatz auswählen",
+          "costCenter": "Kostenstelle",
+          "costCenterPlaceholder": "Kostenstelle auswählen",
+          "project": "Projekt",
+          "projectPlaceholder": "Projekt auswählen",
           "currency": "Währung",
           "currencyPlaceholder": "CHF",
           "currencyCHF": "CHF",
@@ -391,76 +402,16 @@
           "currencyUSD": "USD",
           "amount": "Betrag",
           "amountPlaceholder": "0.00",
-          "selectDebitAccount": "Sollkonto auswählen",
-          "selectCreditAccount": "Habenkonto auswählen",
           "addPosition": "Position hinzufügen",
           "actions": "Aktionen",
-          "summary": "{{debit}} an {{credit}} | {{amount}}"
-        },
-        "notFound": {
-          "title": "Buchung nicht gefunden",
-          "description": "Die angeforderte Buchung konnte nicht gefunden werden."
-        },
-        "fallbackTitle": "Buchung",
-        "date": {
-          "title": "Datum",
-          "documentDate": "Belegdatum",
-          "dueDate": "Fälligkeitsdatum",
-          "servicePeriod": "Leistungsperiode"
-        },
-        "issuer": {
-          "title": "Aussteller",
-          "noIssuer": "Kein Aussteller erfasst"
-        },
-        "transaction": {
-          "title": "Buchung",
-          "debit": "Soll-Konto",
-          "credit": "Haben-Konto",
-          "amount": "Betrag"
-        },
-        "receipt": {
-          "title": "Beleg",
-          "number": "Beleg-Nr.",
-          "status": "Status",
-          "hasReceipt": "Beleg vorhanden",
-          "noReceipt": "Kein Beleg",
-          "noReceiptUpload": "Kein Beleg hochgeladen"
+          "summary": "{{debit}} an {{credit}} | {{amount}}",
+          "selectDebitAccount": "Soll-Konto auswählen",
+          "selectCreditAccount": "Haben-Konto auswählen"
         }
       },
-      "transaction": {
-        "notFound": {
-          "title": "Buchung nicht gefunden",
-          "description": "Die angeforderte Buchung konnte nicht gefunden werden."
-        },
-        "fallbackTitle": "Buchung",
-        "sections": {
-          "issuer": {
-            "title": "Rechnungssteller",
-            "processing": "Jurata AI extrahiert Daten",
-            "notRecorded": "Nicht erfasst",
-            "noIssuer": "Keine Angaben zum Rechnungssteller"
-          },
-          "date": {
-            "title": "Datum",
-            "documentDate": "Belegdatum",
-            "dueDate": "Fälligkeitsdatum",
-            "servicePeriod": "Leistungsperiode"
-          },
-          "transaction": {
-            "title": "Buchung",
-            "debit": "Soll",
-            "credit": "Haben",
-            "amount": "Betrag"
-          },
-          "receipt": {
-            "title": "Beleg",
-            "number": "Beleg-Nr.",
-            "status": "Status",
-            "hasReceipt": "Beleg vorhanden",
-            "noReceipt": "Kein Beleg",
-            "noReceiptUpload": "Kein Beleg vorhanden"
-          }
-        }
+      "actions": {
+        "cancel": "Abbrechen",
+        "save": "Speichern"
       }
     },
     "legal": {
