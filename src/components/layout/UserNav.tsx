@@ -23,11 +23,13 @@ import {
 import { signOut } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 export function UserNav() {
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
   const [email, setEmail] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const getSession = async () => {
@@ -50,7 +52,7 @@ export function UserNav() {
       navigate("/login");
     } catch (error) {
       console.error("Sign out failed:", error);
-      toast.error("Abmelden fehlgeschlagen");
+      toast.error(t('components.userNav.signOutFailed'));
     }
   };
 
@@ -70,7 +72,7 @@ export function UserNav() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Mein Konto</DropdownMenuLabel>
+        <DropdownMenuLabel>{t('components.userNav.myAccount')}</DropdownMenuLabel>
         {email && (
           <DropdownMenuLabel className="text-xs font-normal text-muted-foreground">
             {email}
@@ -82,7 +84,7 @@ export function UserNav() {
           <DropdownMenuItem asChild>
             <Link to="/account" className="cursor-pointer">
               <User className="mr-2 h-4 w-4" />
-              Persönliches Konto
+              {t('components.userNav.personalAccount')}
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -90,7 +92,7 @@ export function UserNav() {
             className="cursor-pointer"
           >
             <Settings className="mr-2 h-4 w-4" />
-            Einstellungen
+            {t('components.userNav.settings')}
           </DropdownMenuItem>
         </DropdownMenuGroup>
         
@@ -98,14 +100,14 @@ export function UserNav() {
 
         <DropdownMenuGroup>
           <DropdownMenuLabel className="text-xs font-normal text-muted-foreground">
-            Erscheinungsbild
+            {t('components.userNav.appearance')}
           </DropdownMenuLabel>
           <DropdownMenuItem
             onClick={() => setTheme("light")}
             className="cursor-pointer"
           >
             <Sun className="mr-2 h-4 w-4" />
-            Hell
+            {t('components.userNav.theme.light')}
             {theme === "light" && (
               <span className="ml-auto flex h-2 w-2 rounded-full bg-primary" />
             )}
@@ -115,7 +117,7 @@ export function UserNav() {
             className="cursor-pointer"
           >
             <Moon className="mr-2 h-4 w-4" />
-            Dunkel
+            {t('components.userNav.theme.dark')}
             {theme === "dark" && (
               <span className="ml-auto flex h-2 w-2 rounded-full bg-primary" />
             )}
@@ -125,7 +127,7 @@ export function UserNav() {
             className="cursor-pointer"
           >
             <Laptop className="mr-2 h-4 w-4" />
-            System
+            {t('components.userNav.theme.system')}
             {theme === "system" && (
               <span className="ml-auto flex h-2 w-2 rounded-full bg-primary" />
             )}
@@ -139,7 +141,7 @@ export function UserNav() {
           className="text-red-600 dark:text-red-400 cursor-pointer"
         >
           <LogOut className="mr-2 h-4 w-4" />
-          Abmelden
+          {t('components.userNav.signOut')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

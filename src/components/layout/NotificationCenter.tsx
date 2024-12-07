@@ -5,8 +5,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bell } from "lucide-react";
 import { notificationStore, type Notification } from "@/lib/notifications";
 import { NotificationItem } from './NotificationItem';
+import { useTranslation } from "react-i18next";
 
 export function NotificationCenter() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
@@ -81,14 +83,14 @@ export function NotificationCenter() {
         className="w-[480px] p-0"
       >
         <div className="flex items-center justify-between border-b px-4 py-2">
-          <h4 className="text-sm font-medium">Benachrichtigungen</h4>
+          <h4 className="text-sm font-medium">{t('components.notifications.title')}</h4>
           {unreadCount > 0 && (
             <Button
               variant="link"
               className="h-auto px-2 py-1 text-xs"
               onClick={markAllAsRead}
             >
-              Alle als gelesen markieren
+              {t('components.notifications.markAllAsRead')}
             </Button>
           )}
         </div>
@@ -97,7 +99,7 @@ export function NotificationCenter() {
           {notifications.length === 0 ? (
             <div className="flex h-full items-center justify-center p-8 text-center">
               <p className="text-sm text-muted-foreground">
-                Keine Benachrichtigungen vorhanden
+                {t('components.notifications.noNotifications')}
               </p>
             </div>
           ) : (
