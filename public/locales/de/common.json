@@ -362,18 +362,19 @@
         },
         "document": {
           "title": "Belegdetails",
-          "processing": "Jurata AI extrahiert Daten",
-          "notRecorded": "Nicht erfasst",
-          "selectDate": "Datum auswählen",
+          "processing": "Beleg wird verarbeitet...",
+          "notRecorded": "Keine Belegdetails erfasst",
           "date": "Belegdatum",
           "dueDate": "Fälligkeitsdatum",
           "servicePeriodStart": "Leistungsperiode von",
           "servicePeriodEnd": "Leistungsperiode bis",
-          "reference": "Beleg-Ref.",
-          "referencePlaceholder": "z.B. RE2024-001",
+          "reference": "Beleg-Nr.",
+          "referencePlaceholder": "Beleg-Nr. eingeben",
           "description": "Beschreibung",
-          "descriptionPlaceholder": "Buchungsbeschreibung",
-          "summary": "{{ref}} vom {{date}}{{dueDate ? ` (fällig: ${dueDate})` : ''}}"
+          "descriptionPlaceholder": "Beschreibung eingeben",
+          "selectDate": "Datum wählen",
+          "summary": "Beleg {{ref}} vom {{date}} (fällig: {{dueDate}})",
+          "summaryWithoutDueDate": "Beleg {{ref}} vom {{date}}"
         },
         "booking": {
           "title": "Buchung",
@@ -792,6 +793,14 @@
       "date": "Datum",
       "description": "Beschreibung",
       "amount": "Betrag"
+    },
+    "accountSelect": {
+      "selectAccount": "Konto wählen",
+      "searchAccount": "Konto suchen...",
+      "noAccountFound": "Kein Konto gefunden",
+      "aiSuggestions": "AI-Vorschläge",
+      "remainingAccounts": "Übrige Konten",
+      "allAccounts": "Alle Konten"
     }
   }
 }

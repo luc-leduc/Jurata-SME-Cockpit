@@ -77,11 +77,16 @@ export function DocumentSection({ form, isOpen, onToggle, receipt }: DocumentSec
         processingText: t('pages.journal.sections.document.processing'),
         hasAiData: Boolean(form.watch('document_ref') || form.watch('description')),
         summary: form.watch('document_ref') && form.watch('date')
-          ? t('pages.journal.sections.document.summary', {
-              ref: form.watch('document_ref'),
-              date: format(form.watch('date'), 'dd.MM.yyyy'),
-              dueDate: form.watch('due_date') ? format(form.watch('due_date'), 'dd.MM.yyyy') : undefined
-            })
+          ? form.watch('due_date')
+            ? t('pages.journal.sections.document.summary', {
+                ref: form.watch('document_ref'),
+                date: format(form.watch('date'), 'dd.MM.yyyy'),
+                dueDate: format(form.watch('due_date'), 'dd.MM.yyyy')
+              })
+            : t('pages.journal.sections.document.summaryWithoutDueDate', {
+                ref: form.watch('document_ref'),
+                date: format(form.watch('date'), 'dd.MM.yyyy')
+              })
           : t('pages.journal.sections.document.notRecorded')
       }}
     >

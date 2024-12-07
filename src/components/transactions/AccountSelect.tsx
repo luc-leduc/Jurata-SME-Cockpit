@@ -8,6 +8,7 @@ import { FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/f
 import { ChevronsUpDown, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Account } from "@/lib/types";
+import { useTranslation } from 'react-i18next';
 
 const ITEM_HEIGHT = 36;
 const MAX_ITEMS = 6;
@@ -33,8 +34,11 @@ export function AccountSelect({
   className,
   size = 'default',
   allowClear,
-  placeholder = "Konto wählen"
+  placeholder
 }: AccountSelectProps) {
+  const { t } = useTranslation();
+  placeholder = placeholder || t('components.accountSelect.selectAccount');
+
   // State
   const [open, setOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -217,7 +221,7 @@ export function AccountSelect({
           <div className="flex flex-col">
             <div className="p-2 border-b">
               <Input
-                placeholder="Konto suchen..."
+                placeholder={t('components.accountSelect.searchAccount')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
@@ -227,7 +231,7 @@ export function AccountSelect({
             <ScrollArea className="overflow-y-auto" style={{ maxHeight: `${ITEM_HEIGHT * MAX_ITEMS}px` }}>
               {filteredAccounts.length === 0 ? (
                 <div className="p-4 text-sm text-muted-foreground text-center">
-                  Kein Konto gefunden
+                  {t('components.accountSelect.noAccountFound')}
                 </div>
               ) : (
                 <div className="py-1">
@@ -235,7 +239,7 @@ export function AccountSelect({
                     <>
                       <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground flex items-center">
                         <Sparkles className="mr-1 h-3 w-3" />
-                        AI-Vorschläge
+                        {t('components.accountSelect.aiSuggestions')}
                       </div>
                       {filteredSuggestions.map((item, index) => 
                         renderAccount(item.account, index, item)
@@ -245,7 +249,9 @@ export function AccountSelect({
                   )}
                   <div>
                     <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
-                      {filteredSuggestions.length > 0 ? 'Übrige Konten' : 'Alle Konten'}
+                      {filteredSuggestions.length > 0 
+                        ? t('components.accountSelect.remainingAccounts')
+                        : t('components.accountSelect.allAccounts')}
                     </div>
                     {filteredRemaining.map((account, index) => 
                       renderAccount(account, index + filteredSuggestions.length)

@@ -367,18 +367,19 @@
         },
         "document": {
           "title": "Document Details",
-          "processing": "Jurata AI extracting data",
-          "notRecorded": "Not recorded",
-          "selectDate": "Select date",
-          "date": "Document date",
-          "dueDate": "Due date",
-          "servicePeriodStart": "Service period from",
-          "servicePeriodEnd": "Service period to",
-          "reference": "Document ref.",
-          "referencePlaceholder": "e.g. INV2024-001",
+          "date": "Document Date",
+          "dueDate": "Due Date",
+          "servicePeriodStart": "Service Period Start",
+          "servicePeriodEnd": "Service Period End",
+          "reference": "Document Reference",
+          "referencePlaceholder": "Enter document reference",
           "description": "Description",
-          "descriptionPlaceholder": "Transaction description",
-          "summary": "{{ref}} from {{date}}{{dueDate ? ` (due: ${dueDate})` : ''}}"
+          "descriptionPlaceholder": "Enter description",
+          "selectDate": "Select date",
+          "processing": "Processing document...",
+          "notRecorded": "No document details recorded",
+          "summary": "Document {{ref}} from {{date}} (due: {{dueDate}})",
+          "summaryWithoutDueDate": "Document {{ref}} from {{date}}"
         },
         "booking": {
           "title": "Booking",
@@ -789,6 +790,14 @@
       "cancel": "Cancel",
       "delete": "Delete",
       "edit": "Edit"
+    },
+    "accountSelect": {
+      "selectAccount": "Select account",
+      "searchAccount": "Search account...",
+      "noAccountFound": "No account found",
+      "aiSuggestions": "AI suggestions",
+      "remainingAccounts": "Remaining accounts",
+      "allAccounts": "All accounts"
     }
   }
 }
