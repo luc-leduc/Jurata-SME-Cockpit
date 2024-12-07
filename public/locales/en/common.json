@@ -346,61 +346,34 @@
         "transactionCreateError": "Failed to create transaction"
       },
       "sections": {
+        "notFound": {
+          "title": "Transaction not found",
+          "description": "The requested transaction could not be found."
+        },
+        "fallbackTitle": "Transaction",
+        "date": {
+          "title": "Date",
+          "documentDate": "Document Date",
+          "dueDate": "Due Date",
+          "servicePeriod": "Service Period"
+        },
         "issuer": {
           "title": "Issuer",
-          "processing": "Jurata AI extracting data",
-          "notRecorded": "Not recorded",
-          "company": "Company",
-          "companyPlaceholder": "Company name",
-          "firstName": "First name",
-          "firstNamePlaceholder": "First name",
-          "lastName": "Last name",
-          "lastNamePlaceholder": "Last name",
-          "street": "Address",
-          "streetPlaceholder": "Street and number",
-          "zip": "ZIP",
-          "zipPlaceholder": "ZIP code",
-          "city": "City",
-          "cityPlaceholder": "City",
-          "country": "Country",
-          "countryPlaceholder": "Country"
+          "noIssuer": "No issuer recorded"
         },
-        "document": {
-          "title": "Document Details",
-          "date": "Document Date",
-          "dueDate": "Due Date",
-          "servicePeriodStart": "Service Period Start",
-          "servicePeriodEnd": "Service Period End",
-          "reference": "Document Reference",
-          "referencePlaceholder": "Enter document reference",
-          "description": "Description",
-          "descriptionPlaceholder": "Enter description",
-          "selectDate": "Select date",
-          "processing": "Processing document...",
-          "notRecorded": "No document details recorded",
-          "summary": "Document {{ref}} from {{date}} (due: {{dueDate}})",
-          "summaryWithoutDueDate": "Document {{ref}} from {{date}}"
+        "transaction": {
+          "title": "Transaction",
+          "debit": "Debit Account",
+          "credit": "Credit Account",
+          "amount": "Amount"
         },
-        "booking": {
-          "title": "Booking",
-          "processing": "Jurata AI extracting data",
-          "notRecorded": "Not recorded",
-          "debitAccount": "Debit",
-          "creditAccount": "Credit",
-          "taxRate": "VAT %",
-          "taxRatePlaceholder": "0.00",
-          "currency": "Currency",
-          "currencyPlaceholder": "CHF",
-          "currencyCHF": "CHF",
-          "currencyEUR": "EUR",
-          "currencyUSD": "USD",
-          "amount": "Amount",
-          "amountPlaceholder": "0.00",
-          "selectDebitAccount": "Select debit account",
-          "selectCreditAccount": "Select credit account",
-          "addPosition": "Add position",
-          "actions": "Actions",
-          "summary": "{{debit}} to {{credit}} | {{amount}}"
+        "receipt": {
+          "title": "Receipt",
+          "number": "Receipt Number",
+          "status": "Status",
+          "hasReceipt": "Receipt available",
+          "noReceipt": "No receipt",
+          "noReceiptUpload": "No receipt uploaded"
         }
       }
     },

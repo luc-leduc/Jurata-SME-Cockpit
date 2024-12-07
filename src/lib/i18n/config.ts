@@ -22,6 +22,13 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    debug: true, // Enable debug mode to see what's happening with translations
+    react: {
+      useSuspense: true,
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
+      transEmptyNodeValue: '',
+    },
   });
 
 export default i18n;

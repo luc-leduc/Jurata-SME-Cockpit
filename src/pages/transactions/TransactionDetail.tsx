@@ -1,16 +1,4 @@
-  const getIssuerName = (transaction: any) => {
-    if (transaction.issuer_company) {
-      return transaction.issuer_company;
-    }
-    if (transaction.issuer_first_name || transaction.issuer_last_name) {
-      return [transaction.issuer_first_name, transaction.issuer_last_name]
-        .filter(Boolean)
-        .join(' ');
-    }
-    return null;
-  };
-
-import { useParams } from 'react-router-dom';
+  import { useParams } from 'react-router-dom';
 import { useTransaction } from '@/hooks/use-transaction';
 import { format } from 'date-fns';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -20,8 +8,22 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Building2, Calendar, Receipt, FileText } from 'lucide-react';
 import { ReadOnlyReceiptPreview } from '@/components/transactions/ReadOnlyReceiptPreview';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
+
+const getIssuerName = (transaction: any) => {
+  if (transaction.issuer_company) {
+    return transaction.issuer_company;
+  }
+  if (transaction.issuer_first_name || transaction.issuer_last_name) {
+    return [transaction.issuer_first_name, transaction.issuer_last_name]
+      .filter(Boolean)
+      .join(' ');
+  }
+  return null;
+};
 
 export function TransactionDetail() {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { data: transaction, isLoading } = useTransaction(id!);
 
@@ -30,7 +32,7 @@ export function TransactionDetail() {
       <div className="space-y-6">
         <Breadcrumb
           items={[
-            { label: "Buchungsjournal", href: "/journal" },
+            { label: t('pages.journal.title'), href: "/journal" },
             { label: <Skeleton className="h-4 w-32" />, href: `/journal/${id}` },
           ]}
         />
@@ -59,9 +61,9 @@ export function TransactionDetail() {
   if (!transaction) {
     return (
       <div className="flex min-h-[400px] flex-col items-center justify-center gap-4">
-        <h2 className="text-2xl font-semibold">Buchung nicht gefunden</h2>
+        <h2 className="text-2xl font-semibold">{t('pages.journal.sections.notFound.title')}</h2>
         <p className="text-muted-foreground">
-          Die angeforderte Buchung konnte nicht gefunden werden.
+          {t('pages.journal.sections.notFound.description')}
         </p>
       </div>
     );
@@ -71,10 +73,10 @@ export function TransactionDetail() {
     <div className="space-y-6">
       <Breadcrumb
         items={[
-          { label: "Buchungsjournal", href: "/journal" },
+          { label: t('pages.journal.title'), href: "/journal" },
           { 
             label: [
-              transaction.document_ref || "Buchung",
+              transaction.document_ref || t('pages.journal.sections.fallbackTitle'),
               getIssuerName(transaction)
             ].filter(Boolean).join(" – "),
             href: `/journal/${id}` 
@@ -87,7 +89,7 @@ export function TransactionDetail() {
           <div>
             <h3 className="text-lg font-medium">
               {[
-                transaction.document_ref || "Buchung",
+                transaction.document_ref || t('pages.journal.sections.fallbackTitle'),
                 getIssuerName(transaction)
               ].filter(Boolean).join(" – ")}
             </h3>
@@ -101,20 +103,20 @@ export function TransactionDetail() {
               <CardHeader>
                 <CardTitle className="text-sm font-medium flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
-                  Datum
+                  {t('pages.journal.sections.date.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="grid gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <div className="text-sm font-medium">Belegdatum</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.date.documentDate')}</div>
                     <div className="text-sm text-muted-foreground">
                       {format(new Date(transaction.date), 'dd.MM.yyyy')}
                     </div>
                   </div>
                   {transaction.due_date && (
                     <div>
-                      <div className="text-sm font-medium">Fälligkeitsdatum</div>
+                      <div className="text-sm font-medium">{t('pages.journal.sections.date.dueDate')}</div>
                       <div className="text-sm text-muted-foreground">
                         {format(new Date(transaction.due_date), 'dd.MM.yyyy')}
                       </div>
@@ -123,7 +125,7 @@ export function TransactionDetail() {
                 </div>
                 {(transaction.service_period_start || transaction.service_period_end) && (
                   <div>
-                    <div className="text-sm font-medium">Leistungsperiode</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.date.servicePeriod')}</div>
                     <div className="text-sm text-muted-foreground">
                       {transaction.service_period_start && format(new Date(transaction.service_period_start), 'dd.MM.yyyy')}
                       {' - '}
@@ -138,7 +140,7 @@ export function TransactionDetail() {
               <CardHeader>
                 <CardTitle className="text-sm font-medium flex items-center gap-2">
                   <Building2 className="h-4 w-4" />
-                  Rechnungssteller
+                  {t('pages.journal.sections.issuer.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -168,7 +170,7 @@ export function TransactionDetail() {
                   </div>
                 ) : (
                   <div className="text-sm text-muted-foreground">
-                    Keine Angaben zum Rechnungssteller
+                    {t('pages.journal.sections.issuer.noIssuer')}
                   </div>
                 )}
               </CardContent>
@@ -178,25 +180,25 @@ export function TransactionDetail() {
               <CardHeader>
                 <CardTitle className="text-sm font-medium flex items-center gap-2">
                   <FileText className="h-4 w-4" />
-                  Buchung
+                  {t('pages.journal.sections.transaction.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <div className="text-sm font-medium">Soll</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.transaction.debit')}</div>
                     <div className="text-sm text-muted-foreground">
                       {transaction.debit_account_number} - {transaction.debit_account_name}
                     </div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium">Haben</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.transaction.credit')}</div>
                     <div className="text-sm text-muted-foreground">
                       {transaction.credit_account_number} - {transaction.credit_account_name}
                     </div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium">Betrag</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.transaction.amount')}</div>
                     <div className="text-sm">
                       CHF {transaction.amount.toLocaleString('de-CH', {
                         minimumFractionDigits: 2,
@@ -212,27 +214,27 @@ export function TransactionDetail() {
               <CardHeader>
                 <CardTitle className="text-sm font-medium flex items-center gap-2">
                   <Receipt className="h-4 w-4" />
-                  Beleg
+                  {t('pages.journal.sections.receipt.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   <div>
-                    <div className="text-sm font-medium">Beleg-Nr.</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.receipt.number')}</div>
                     <div className="text-sm text-muted-foreground">
                       {transaction.document_ref || '-'}
                     </div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium">Status</div>
+                    <div className="text-sm font-medium">{t('pages.journal.sections.receipt.status')}</div>
                     <div className="text-sm">
                       {transaction.receipt_path ? (
                         <Badge variant="secondary" className="bg-green-500/10 text-green-500">
-                          Beleg vorhanden
+                          {t('pages.journal.sections.receipt.hasReceipt')}
                         </Badge>
                       ) : (
                         <Badge variant="secondary" className="bg-yellow-500/10 text-yellow-500">
-                          Kein Beleg
+                          {t('pages.journal.sections.receipt.noReceipt')}
                         </Badge>
                       )}
                     </div>
@@ -250,7 +252,7 @@ export function TransactionDetail() {
             <div className="rounded-lg border-2 border-dashed p-8 transition-colors h-full border-muted-foreground/25 relative flex flex-col items-center justify-center gap-2 text-center">
               <Receipt className="h-8 w-8 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">
-                Kein Beleg vorhanden
+                {t('pages.journal.sections.receipt.noReceiptUpload')}
               </p>
             </div>
           )}

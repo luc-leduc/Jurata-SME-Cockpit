@@ -7,7 +7,7 @@ import { AuthProvider } from "./components/auth/AuthProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { Suspense, useEffect } from "react";
 import * as React from "react";
-import '@/lib/i18n/config';
+import { useTranslation } from 'react-i18next';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,20 +56,34 @@ function TitleUpdater() {
   return null;
 }
 
+function AppContent() {
+  const { i18n } = useTranslation();
+  
+  if (!i18n.isInitialized) {
+    return <div className="flex h-screen w-screen items-center justify-center">
+      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+    </div>;
+  }
+
+  return (
+    <Router>
+      <TitleUpdater />
+      <AuthProvider>
+        <Shell />
+        <Toaster />
+        <Suspense>
+          <ReactQueryDevtools position="bottom-right" />
+        </Suspense>
+      </AuthProvider>
+    </Router>
+  );
+}
+
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="swiss-books-theme">
       <QueryClientProvider client={queryClient}>
-        <Router>
-          <TitleUpdater />
-          <AuthProvider>
-            <Shell />
-            <Toaster />
-            <Suspense>
-              <ReactQueryDevtools position="bottom-right" />
-            </Suspense>
-          </AuthProvider>
-        </Router>
+        <AppContent />
       </QueryClientProvider>
     </ThemeProvider>
   );
